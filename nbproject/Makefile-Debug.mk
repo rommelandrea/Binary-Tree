@@ -34,7 +34,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/usaAlberiBin.o
+	${OBJECTDIR}/usaAlberiBin.o \
+	${OBJECTDIR}/AlberoBin.o
 
 
 # C Compiler Flags
@@ -65,6 +66,11 @@ ${OBJECTDIR}/usaAlberiBin.o: usaAlberiBin.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.c) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/usaAlberiBin.o usaAlberiBin.c
+
+${OBJECTDIR}/AlberoBin.o: AlberoBin.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.c) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/AlberoBin.o AlberoBin.c
 
 # Subprojects
 .build-subprojects:
