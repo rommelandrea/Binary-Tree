@@ -17,6 +17,8 @@ int main(int argc, char** argv) {
     albero = newTree();
     
     printf("creato albero");
+    
+    printf("prova");
 
     insert(&albero, 10);
     insert(&albero, 5);
