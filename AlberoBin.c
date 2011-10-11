@@ -129,3 +129,25 @@ void printRotated(tree t, int h){
         printRotated(t->left, h+1);
     }
 }
+
+tree copy(tree al){
+    if(al)
+        return copyNode(al->elem, copy(al->left), copy(al->right));
+    else
+        return al;
+}
+
+tree copyNode(int x, tree t1, tree t2){
+    tree al = newNode(x);
+    al->left = t1;
+    al->right = t2;
+
+    return al;
+}
+
+tree speculate(tree t){
+    if(t)
+        return copyNode(t->elem, speculate(t->right), speculate(t->left));
+    else
+        return t;
+}

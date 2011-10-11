@@ -20,3 +20,7 @@ void inOrder(tree);
 void postOrder(tree);
 
 void printRotated(tree, int);
+
+tree copy(tree);
+tree copyNode(int, tree, tree);
+tree speculate(tree);
