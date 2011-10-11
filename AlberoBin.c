@@ -113,3 +113,19 @@ void postOrder(tree t) {
         printf("%d\n", t->elem);
     }
 }
+
+/**
+ * print tree rotated 90 degree
+ * @param t tree pointer
+ * @param h int value of height, initial value = 0
+ */
+void printRotated(tree t, int h){
+    int i;
+    if(t){
+        printRotated(t->right, h+1);
+        for(i=0; i<=h; i++)
+            printf("\t");
+        printf("%d\n", t->elem);
+        printRotated(t->left, h+1);
+    }
+}

@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux-x86
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux-x86
-CND_ARTIFACT_NAME_Debug=esercitazione_alberi
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux-x86/esercitazione_alberi
+CND_ARTIFACT_NAME_Debug=binary-tree
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux-x86/binary-tree
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux-x86/package
-CND_PACKAGE_NAME_Debug=esercitazionealberi.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux-x86/package/esercitazionealberi.tar
+CND_PACKAGE_NAME_Debug=binary-tree.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux-x86/package/binary-tree.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux-x86
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux-x86
-CND_ARTIFACT_NAME_Release=esercitazione_alberi
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux-x86/esercitazione_alberi
+CND_ARTIFACT_NAME_Release=binary-tree
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux-x86/binary-tree
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux-x86/package
-CND_PACKAGE_NAME_Release=esercitazionealberi.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux-x86/package/esercitazionealberi.tar
+CND_PACKAGE_NAME_Release=binary-tree.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux-x86/package/binary-tree.tar
 #
 # include compiler specific variables
 #

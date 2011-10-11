@@ -56,11 +56,11 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/esercitazione_alberi
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/binary-tree
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/esercitazione_alberi: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/binary-tree: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/esercitazione_alberi ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/binary-tree ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
 ${OBJECTDIR}/usaAlberiBin.o: usaAlberiBin.c 
 	${MKDIR} -p ${OBJECTDIR}
@@ -78,7 +78,7 @@ ${OBJECTDIR}/AlberoBin.o: AlberoBin.c
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/esercitazione_alberi
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/binary-tree
 
 # Subprojects
 .clean-subprojects:

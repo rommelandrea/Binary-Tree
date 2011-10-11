@@ -17,8 +17,6 @@ int main(int argc, char** argv) {
     albero = newTree();
     
     printf("creato albero");
-    
-    printf("prova");
 
     insert(&albero, 10);
     insert(&albero, 5);
@@ -47,6 +45,8 @@ int main(int argc, char** argv) {
 
     d = maxDepth(albero);
     printf("altezza massima %d\n", d);
+    
+    printRotated(albero, 0);
 
     return (EXIT_SUCCESS);
 }

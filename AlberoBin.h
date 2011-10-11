@@ -19,3 +19,4 @@ void preOrder(tree);
 void inOrder(tree);
 void postOrder(tree);
 
+void printRotated(tree, int);

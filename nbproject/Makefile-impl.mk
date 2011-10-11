@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Esercitazione_Alberi
+PROJECTNAME=Binary-Tree
 
 # Active Configuration
 DEFAULTCONF=Debug
