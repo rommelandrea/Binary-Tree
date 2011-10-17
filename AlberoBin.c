@@ -130,6 +130,11 @@ void printRotated(tree t, int h) {
     }
 }
 
+/**
+ * copy a tree
+ * @param al pointer to original tree
+ * @return new tree
+ */
 tree copy(tree al) {
     if (al)
         return copyNode(al->elem, copy(al->left), copy(al->right));
@@ -137,6 +142,13 @@ tree copy(tree al) {
         return al;
 }
 
+/**
+ * create a copy of node
+ * @param x value of node
+ * @param t1 value of left
+ * @param t2 value of right
+ * @return 
+ */
 tree copyNode(int x, tree t1, tree t2) {
     tree al = newNode(x);
     al->left = t1;
@@ -145,6 +157,11 @@ tree copyNode(int x, tree t1, tree t2) {
     return al;
 }
 
+/**
+ * create a new speculate tree
+ * @param t pointer to tree to copy speculate
+ * @return return speculate tree
+ */
 tree speculate(tree t) {
     if (t)
         return copyNode(t->elem, speculate(t->right), speculate(t->left));
@@ -152,6 +169,10 @@ tree speculate(tree t) {
         return t;
 }
 
+/**
+ * speculate in place tree
+ * @param t
+ */
 void flip(tree t) {
     if (t) {
         swap(&(t->left), &(t->right));
@@ -160,6 +181,11 @@ void flip(tree t) {
     }
 }
 
+/**
+ * swap t1 to t2 and t2 to t1
+ * @param t1
+ * @param t2
+ */
 void swap(tree *t1, tree *t2) {
     tree temp;
     temp = *t1;
@@ -167,10 +193,22 @@ void swap(tree *t1, tree *t2) {
     *t2 = temp;
 }
 
+/**
+ * check if t1 is equal t2
+ * @param t1
+ * @param t2
+ * @return 
+ */
 int equals(tree t1, tree t2){
     return ((t1 == t2) || (t1 && t2) && (t1->elem == t2->elem) && equals(t1->left, t2->left) && equals(t1->right, t2->right));
 }
 
+/**
+ * check if t1 isSpeculate to t2
+ * @param t1
+ * @param t2
+ * @return 
+ */
 int isSpeculate(tree t1, tree t2){
     return ((t1 == t2)  || (t1 && t2) && (t1->elem == t2->elem) && isSpeculate(t1->left, t2->right) && isSpeculate(t1->right, t2->left));
 }
