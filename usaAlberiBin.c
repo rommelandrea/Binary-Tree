@@ -11,16 +11,18 @@
  * 
  */
 int main(int argc, char** argv) {
-    int n, d;
+    int n, d, e;
     tree albero;
+    tree copia;
 
     albero = newTree();
     
-    printf("creato albero");
+    printf("creato albero\n");
 
     insert(&albero, 10);
     insert(&albero, 5);
     insert(&albero, 15);
+/*
     insert(&albero, 3);
     insert(&albero, 4);
     insert(&albero, 12);
@@ -36,7 +38,7 @@ int main(int argc, char** argv) {
     insert(&albero, 29);
     insert(&albero, 25);
     insert(&albero, 13);
-    
+*/    
     
     preOrder(albero);
 
@@ -48,5 +50,26 @@ int main(int argc, char** argv) {
     
     printRotated(albero, 0);
 
+    copia = speculate(albero);
+    
+    printf("\n\nstampo il nuovo albero invertito\n");
+    preOrder(copia);
+    
+    n = size(copia);
+    printf("numero nodi %d\n", n);
+
+    d = maxDepth(copia);
+    printf("altezza massima %d\n", d);
+    
+    printRotated(copia, 0);
+    
+    printf("\n\nstampo il vecchio albero invertito\n");
+    //flip(albero);
+    
+    printRotated(albero, 0);
+    
+    e = equals(albero, copia);
+    printf("\n\n uguali %d", e);
+    
     return (EXIT_SUCCESS);
 }

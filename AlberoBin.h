@@ -24,3 +24,10 @@ void printRotated(tree, int);
 tree copy(tree);
 tree copyNode(int, tree, tree);
 tree speculate(tree);
+
+void flip(tree);
+void swap(tree *, tree *);
+
+int equals(tree, tree);
+
+int isSpeculate(tree, tree);s

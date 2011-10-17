@@ -9,7 +9,7 @@
 struct node {
     int elem;
     tree left, right;
-}node;
+} node;
 
 /**
  * create new tree
@@ -25,7 +25,7 @@ tree newTree() {
  * @return return pointer to new node
  */
 tree newNode(int el) {
-    tree pnode = malloc(sizeof(node));
+    tree pnode = malloc(sizeof (node));
     pnode->elem = el;
     pnode->left = NULL;
     pnode->right = NULL;
@@ -54,8 +54,8 @@ void insert(tree *t, int el) {
  * @param t tree pointer
  * @return int number of node
  */
-int size(tree t){
-    if(!t)
+int size(tree t) {
+    if (!t)
         return 0;
     else
         return (size(t->left) + 1 + size(t->right));
@@ -66,14 +66,14 @@ int size(tree t){
  * @param t pointer to tree
  * @return int with max depth
  */
-int maxDepth(tree t){
-    if(!t)
+int maxDepth(tree t) {
+    if (!t)
         return 0;
-    else{
+    else {
         int lDepth = maxDepth(t->left);
         int rDepth = maxDepth(t->right);
-        
-        if(lDepth > rDepth) return (lDepth + 1);
+
+        if (lDepth > rDepth) return (lDepth + 1);
         else return (rDepth + 1);
     }
 }
@@ -83,7 +83,7 @@ int maxDepth(tree t){
  * @param t
  */
 void preOrder(tree t) {
-    if(t) {
+    if (t) {
         printf("%d\n", t->elem);
         preOrder(t->left);
         preOrder(t->right);
@@ -119,25 +119,25 @@ void postOrder(tree t) {
  * @param t tree pointer
  * @param h int value of height, initial value = 0
  */
-void printRotated(tree t, int h){
+void printRotated(tree t, int h) {
     int i;
-    if(t){
-        printRotated(t->right, h+1);
-        for(i=0; i<=h; i++)
+    if (t) {
+        printRotated(t->right, h + 1);
+        for (i = 0; i <= h; i++)
             printf("\t");
         printf("%d\n", t->elem);
-        printRotated(t->left, h+1);
+        printRotated(t->left, h + 1);
     }
 }
 
-tree copy(tree al){
-    if(al)
+tree copy(tree al) {
+    if (al)
         return copyNode(al->elem, copy(al->left), copy(al->right));
     else
         return al;
 }
 
-tree copyNode(int x, tree t1, tree t2){
+tree copyNode(int x, tree t1, tree t2) {
     tree al = newNode(x);
     al->left = t1;
     al->right = t2;
@@ -145,9 +145,32 @@ tree copyNode(int x, tree t1, tree t2){
     return al;
 }
 
-tree speculate(tree t){
-    if(t)
+tree speculate(tree t) {
+    if (t)
         return copyNode(t->elem, speculate(t->right), speculate(t->left));
     else
         return t;
+}
+
+void flip(tree t) {
+    if (t) {
+        swap(&(t->left), &(t->right));
+        flip(t->left);
+        flip(t->right);
+    }
+}
+
+void swap(tree *t1, tree *t2) {
+    tree temp;
+    temp = *t1;
+    *t1 = *t2;
+    *t2 = temp;
+}
+
+int equals(tree t1, tree t2){
+    return ((t1 == t2) || (t1 && t2) && (t1->elem == t2->elem) && equals(t1->left, t2->left) && equals(t1->right, t2->right));
+}
+
+int isSpeculate(tree t1, tree t2){
+    return ((t1 == t2)  || (t1 && t2) && (t1->elem == t2->elem) && isSpeculate(t1->left, t2->right) && isSpeculate(t1->right, t2->left));
 }
