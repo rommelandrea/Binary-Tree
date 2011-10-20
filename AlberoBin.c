@@ -25,11 +25,16 @@ tree newTree() {
  * @return return pointer to new node
  */
 tree newNode(int el) {
-    tree pnode = malloc(sizeof (node));
-    pnode->elem = el;
-    pnode->left = NULL;
-    pnode->right = NULL;
+    tree pnode;
 
+    if (!(pnode = malloc(sizeof (node)))) {
+        printf("\nerror malloc");
+        exit(EXIT_FAILURE);
+    } else {
+        pnode->elem = el;
+        pnode->left = NULL;
+        pnode->right = NULL;
+    }
     return pnode;
 }
 
@@ -199,16 +204,36 @@ void swap(tree *t1, tree *t2) {
  * @param t2
  * @return 
  */
-int equals(tree t1, tree t2){
+int equals(tree t1, tree t2) {
     return ((t1 == t2) || (t1 && t2) && (t1->elem == t2->elem) && equals(t1->left, t2->left) && equals(t1->right, t2->right));
 }
 
 /**
  * check if t1 isSpeculate to t2
- * @param t1
- * @param t2
- * @return 
+ * @param t1 tree 1
+ * @param t2 tree 2
+ * @return return 1 if equal 
  */
-int isSpeculate(tree t1, tree t2){
-    return ((t1 == t2)  || (t1 && t2) && (t1->elem == t2->elem) && isSpeculate(t1->left, t2->right) && isSpeculate(t1->right, t2->left));
+int isSpeculate(tree t1, tree t2) {
+    return ((t1 == t2) || (t1 && t2) && (t1->elem == t2->elem) && isSpeculate(t1->left, t2->right) && isSpeculate(t1->right, t2->left));
+}
+
+/**
+ * similar this method return true if the two tree in input have same form
+ * @param t1 tree 1
+ * @param t2 tree 2
+ * @return return 1 if equals 0 on other case
+ */
+int similar(tree t1, tree t2) {
+    return ((t1 == t2) == (t1 && t2) && similar(t1->left, t2->left) && similar(t1->right, t2->right));
+}
+
+/**
+ * search element x in tree
+ * @param x element searched
+ * @param t tree pointer
+ * @return 1 if find element 0 if it don't find it
+ */
+int find(int x, tree t) {
+    return (t) && ((t->elem == x) || find(x, t->left) || find(x, t->right));
 }
