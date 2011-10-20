@@ -237,3 +237,4 @@ int similar(tree t1, tree t2) {
 int find(int x, tree t) {
     return (t) && ((t->elem == x) || find(x, t->left) || find(x, t->right));
 }
+

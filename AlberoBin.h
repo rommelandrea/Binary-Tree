@@ -30,4 +30,6 @@ void swap(tree *, tree *);
 
 int equals(tree, tree);
 
-int isSpeculate(tree, tree);s
+int isSpeculate(tree, tree);
+
+int similar(tree, tree);
